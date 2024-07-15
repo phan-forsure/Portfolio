@@ -3,7 +3,7 @@ import './style/output.css'
 function App() {
 
   return (
-    <h1>React app, Portfolio</h1>
+    <h1 className='m-4 text-4xl'>React app, Portfolio</h1>
   )
 }
 
