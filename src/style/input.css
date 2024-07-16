@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg-main: #101629;
+    --bg-main-light: #161d37;
+    --border-color: #ebf4ff2a;
+}
+
+@layer base {
+    .border-b-1 {
+        border-bottom-width: 1px;
+    }
+
+    .border-r-1 {
+        border-right-width: 1px;
+    }
+
+    .border-b-main {
+        border-bottom-color: var(--border-color);
+    }
+
+    .border-r-main {
+        border-right-color: var(--border-color);
+    }
+
+    .bg-main-light {
+        background-color: var(--bg-main-light);
+    }
+}
+
+
+* {
+    font-family: 'Rubik';
+}
+
+body {
+    background-color: var(--bg-main);
+}
+
+.app {
+    margin: 4em;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'hero bar';
+}
+
+.fade {
+    opacity: 1;
+}
+
+.hero {
+    width: 37rem;
+    grid-area: hero;
+}
+
+.side-bar {
+    grid-area: bar;
+}
+
+.dark {
+    color: rgb(238, 249, 255) !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #323e4e;
+}

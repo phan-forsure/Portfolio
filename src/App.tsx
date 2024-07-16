@@ -1,9 +1,19 @@
+import { useEffect } from 'react'
+import Homepage from './Components/Homepage'
 import './style/output.css'
 
 function App() {
+  useEffect(() => {
+    const app = document.querySelector('.app')
+    setTimeout(() => {
+      app.classList.add('fade')
+    }, 200)
+  }, []);
 
   return (
-    <h1 className='m-4 text-4xl'>React app, Portfolio</h1>
+    <div className="app dark opacity-0">
+      <Homepage /> 
+    </div>
   )
 }
 
