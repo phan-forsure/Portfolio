@@ -57,11 +57,13 @@ body {
 
 .hero {
     width: 37rem;
+    height: 34rem;
     grid-area: hero;
 }
 
 .side-bar {
     grid-area: bar;
+    height: 40rem;
 }
 
 .dark {
@@ -69,6 +71,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    background-color: #323e4e;
+    width: 0px;
+}
+
+.comp {
+    @apply rounded-md hover:bg-main-light transition-all p-8 mt-4;
 }
