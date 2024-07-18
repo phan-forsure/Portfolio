@@ -32,23 +32,28 @@
 
 
 * {
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
     background-color: var(--bg-main);
+    color: #eef9ff;
 }
 
 .app {
-    margin: 4em;
-    transition: all .5s linear;
-    -webkit-transition: all .5s linear;
-    -moz-transition: all .5s linear;
-    -ms-transition: all .5s linear;
-    -o-transition: all .5s linear;
+    margin: 4em 4rem 0;
+    transition: opacity .5s linear;
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -ms-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 'hero bar';
+    grid-template-areas: 'head head' 'hero bar';
+}
+
+header {
+    grid-area: head;
 }
 
 .fade {
@@ -66,14 +71,36 @@ body {
     height: 40rem;
 }
 
-.dark {
-    color: rgb(238, 249, 255) !important;
-}
-
 ::-webkit-scrollbar {
     width: 0px;
 }
 
 .comp {
-    @apply rounded-md hover:bg-main-light transition-all p-8 mt-4;
+    @apply rounded-md hover:bg-main-light p-8 mt-4;
+    transition: background 0.15s;
+    -webkit-transition: background 0.15s;
+    -moz-transition: background 0.15s;
+    -ms-transition: background 0.15s;
+    -o-transition: background 0.15s;
+}
+
+body.light {
+    color: black;
+    background-color: white;
+}
+
+.hero a {
+    transition: background 0.15s;
+    -webkit-transition: background 0.15s;
+    -moz-transition: background 0.15s;
+    -ms-transition: background 0.15s;
+    -o-transition: background 0.15s;
+}
+
+body.light .hero img {
+    background-color: black;
+}
+
+body.light .side-bar .comp:hover {
+    background-color: #eee !important;
 }
