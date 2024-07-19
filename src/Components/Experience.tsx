@@ -38,7 +38,7 @@ export default function Experience() {
       }, []);
     
     return (
-        <div className='comp'>
+        <div className='comp experience'>
             <h2 className='text-xl font-semibold text-center border-b-1 border-b-main mx-6 p-4'>Experience</h2>
             <div className='grid grid-rows-3'>
                <h2 className="p-8 text-xl mx-6 border-b-1 border-b-main opacity-70"><span className="text-emerald-400">{iProj}+</span> Projects</h2>

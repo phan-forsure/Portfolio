@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Homepage from './Components/Homepage'
 import './style/output.css'
+import Footer from './Components/Footer'
 
 function Header({ light, setLight }) {
   return (
@@ -37,6 +38,7 @@ function App() {
     <div className="app opacity-0">
       <Header light={light} setLight={setLight}/>
       <Homepage /> 
+      <Footer />
     </div>
   )
 }

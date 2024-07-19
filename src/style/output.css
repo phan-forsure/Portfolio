@@ -474,6 +474,14 @@ video {
   background-color: #eee;
 }
 
+.\!light .border-b-main {
+  border-bottom-color: #a6a6a6 !important;
+}
+
+.light .border-b-main {
+  border-bottom-color: #a6a6a6;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -621,11 +629,6 @@ video {
   margin-right: 1.5rem;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -642,12 +645,12 @@ video {
   margin-top: 3rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .block {
@@ -720,6 +723,10 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -748,9 +755,9 @@ video {
   padding: 2rem;
 }
 
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .px-8 {
@@ -772,9 +779,9 @@ video {
   line-height: 2rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-xl {
@@ -786,6 +793,10 @@ video {
   font-weight: 200;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .font-normal {
   font-weight: 400;
 }
@@ -794,18 +805,13 @@ video {
   font-weight: 600;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
-.text-emerald-700 {
-  --tw-text-opacity: 1;
-  color: rgb(4 120 87 / var(--tw-text-opacity));
-}
-
 .text-emerald-400 {
   --tw-text-opacity: 1;
   color: rgb(52 211 153 / var(--tw-text-opacity));
+}
+
+.\!opacity-100 {
+  opacity: 1 !important;
 }
 
 .opacity-0 {
@@ -818,14 +824,6 @@ video {
 
 .opacity-70 {
   opacity: 0.7;
-}
-
-.opacity-100 {
-  opacity: 1;
-}
-
-.\!opacity-100 {
-  opacity: 1 !important;
 }
 
 .transition-all {
@@ -857,12 +855,13 @@ body {
   -ms-transition: opacity .5s linear;
   -o-transition: opacity .5s linear;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 'head head' 'hero bar';
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 'head head head head head' 'hero hero bar bar bar' 'foot foot foot foot foot';
 }
 
 header {
   grid-area: head;
+  width: 100%;
 }
 
 .fade {
@@ -870,7 +869,7 @@ header {
 }
 
 .hero {
-  width: 37rem;
+  width: calc(100% - 3rem);
   height: 34rem;
   grid-area: hero;
 }
@@ -878,6 +877,7 @@ header {
 .side-bar {
   grid-area: bar;
   height: 40rem;
+  width: calc(100% - 1rem);
 }
 
 ::-webkit-scrollbar {
@@ -886,6 +886,7 @@ header {
 
 .comp {
   margin-top: 1rem;
+  width: 100%;
   border-radius: 0.375rem;
   padding: 2rem;
   transition: background 0.15s;
@@ -932,6 +933,67 @@ body.light .side-bar .comp:not(.projects):hover {
 .project:hover h2 i {
   left: 6px;
   opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .app {
+    grid-template-areas: 'head head head head head' 'hero hero hero hero hero' 'bar bar bar bar bar';
+  }
+
+  .side-bar {
+    overflow-y: visible !important;
+    height: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .side-bar {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .hero {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 1rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .side-bar {
+    padding: 0;
+  }
+
+  .side-bar .skills div {
+    display: block;
+  }
+
+  .side-bar .skills div ul {
+    margin-top: 2rem;
+    border: none;
+  }
+
+  .side-bar .comp {
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+
+  .side-bar .comp div {
+    padding: .5rem;
+    margin: 1rem 0;
+  }
+
+  .experience div h2 {
+    padding: 2rem .5rem;
+  }
 }
 
 .hover\:bg-main-light:hover {

@@ -5,7 +5,7 @@ const tools: string[] = ['Vite', 'Webpack', 'Postman', 'Bash', 'Git & Github', '
 
 export default function Skills() {
     return (
-        <div className='comp'>
+        <div className='comp skills'>
             <h2 className='text-xl font-semibold text-center border-b-1 border-b-main mx-6 mb-8 p-4'>Skills</h2>
             <div className='grid grid-cols-3'>
                 <ul className='flex flex-wrap justify-center border-r-1 border-r-main'>
