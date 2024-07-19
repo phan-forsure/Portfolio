@@ -5,7 +5,7 @@ import './style/output.css'
 function Header({ light, setLight }) {
   return (
     <header className='h-fit flex justify-end'>
-      <button className='w-10 h-10 bg-white' onClick={() => {
+      <button className='w-12 h-12 text-2xl hover:bg-main-light rounded-full' onClick={() => {
         setLight(!light)
       }}>
         {light ? <i className='fa-solid fa-sun'></i> : <i className='fa-solid fa-moon'></i>}

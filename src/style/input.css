@@ -28,6 +28,10 @@
     .bg-main-light {
         background-color: var(--bg-main-light);
     }
+
+    .light .bg-main-light {
+        background-color: #eee;
+    }
 }
 
 
@@ -76,12 +80,16 @@ header {
 }
 
 .comp {
-    @apply rounded-md hover:bg-main-light p-8 mt-4;
+    @apply rounded-md p-8 mt-4;
     transition: background 0.15s;
     -webkit-transition: background 0.15s;
     -moz-transition: background 0.15s;
     -ms-transition: background 0.15s;
     -o-transition: background 0.15s;
+}
+
+.comp:not(.projects):hover {
+    background-color: var(--bg-main-light);
 }
 
 body.light {
@@ -101,6 +109,20 @@ body.light .hero img {
     background-color: black;
 }
 
-body.light .side-bar .comp:hover {
-    background-color: #eee !important;
+body.light .side-bar .comp:not(.projects):hover {
+    background-color: #eee;
+}
+
+.project h2 i {
+    opacity: .7;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.project:hover h2 i {
+    left: 6px;
+    opacity: 1;
 }
