@@ -135,7 +135,7 @@ body.light .side-bar .comp:not(.projects):hover {
 
 @media (max-width: 1200px) {
     .app {
-        grid-template-areas: 'head head head head head' 'hero hero hero hero hero' 'bar bar bar bar bar';
+        grid-template-areas: 'head head head head head' 'hero hero hero hero hero' 'bar bar bar bar bar' 'foot foot foot foot foot';
     }
 
     .side-bar {
@@ -192,4 +192,8 @@ body.light .side-bar .comp:not(.projects):hover {
     .experience div h2 {
         padding: 2rem .5rem;
     }
+}
+
+footer {
+    grid-area: foot;
 }
