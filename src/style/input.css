@@ -3,197 +3,266 @@
 @tailwind utilities;
 
 :root {
-    --bg-main: #101629;
-    --bg-main-light: #161d37;
-    --border-color: #ebf4ff2a;
+  /* --bg-main: #101629; */
+  --bg-main: #151515;
+  --bg-main-light: #212121;
+  --border-color: #ebf4ff2a;
 }
 
 @layer base {
-    .border-b-1 {
-        border-bottom-width: 1px;
-    }
+  .border-b-1 {
+    border-bottom-width: 1px;
+  }
 
-    .border-r-1 {
-        border-right-width: 1px;
-    }
+  .border-r-1 {
+    border-right-width: 1px;
+  }
 
-    .border-b-main {
-        border-bottom-color: var(--border-color);
-    }
+  .border-b-main {
+    border-bottom-color: var(--border-color);
+  }
 
-    .border-r-main {
-        border-right-color: var(--border-color);
-    }
+  .border-r-main {
+    border-right-color: var(--border-color);
+  }
 
-    .bg-main-light {
-        background-color: var(--bg-main-light);
-    }
+  .bg-main-light {
+    background-color: var(--bg-main-light);
+  }
 
-    .light .bg-main-light {
-        background-color: #eee;
-    }
+  .light .bg-main-light {
+    background-color: #eee;
+  }
 
-    .light .border-b-main {
-        border-bottom-color: #a6a6a6;
-    }
+  .light .border-b-main {
+    border-bottom-color: #a6a6a6;
+  }
 }
 
-
 * {
-    font-family: 'Rubik', sans-serif;
+  font-family: "Host Grotesk", sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: #eef9ff;
+  background-color: var(--bg-main);
+  color: #ffffff;
+  transition: background 0.15s;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  -ms-transition: background 0.15s;
+  -o-transition: background 0.15s;
 }
 
 .app {
-    margin: 4em 4rem 0;
-    transition: opacity .5s linear;
-    -webkit-transition: opacity .5s linear;
-    -moz-transition: opacity .5s linear;
-    -ms-transition: opacity .5s linear;
-    -o-transition: opacity .5s linear;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: 'head head head head head' 'hero hero bar bar bar' 'foot foot foot foot foot';
+  transition: opacity 0.5s linear;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
 }
 
+.container-all {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "head head head head head" "hero hero hero hero hero" "bar bar bar bar bar" "foot foot foot foot foot";
+}
+
+
 header {
-    grid-area: head;
-    width: 100%;
+  grid-area: head;
+  width: 100%;
 }
 
 .fade {
-    opacity: 1;
+  opacity: 1;
 }
 
 .hero {
-    width: calc(100% - 3rem);
-    height: 34rem;
-    grid-area: hero;
+  width: calc(100% - 3rem);
+  height: 34rem;
+  grid-area: hero;
 }
 
 .side-bar {
-    grid-area: bar;
-    height: 40rem;
-    width: calc(100% - 1rem);
+  grid-area: bar;
+  height: 40rem;
+  width: calc(100% - 1rem);
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+  width: 0px;
 }
 
 .comp {
-    @apply rounded-md p-8 mt-4 w-full;
-    transition: background 0.15s;
-    -webkit-transition: background 0.15s;
-    -moz-transition: background 0.15s;
-    -ms-transition: background 0.15s;
-    -o-transition: background 0.15s;
+  @apply rounded-md p-8 mt-4 w-full;
+  transition: background 0.15s;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  -ms-transition: background 0.15s;
+  -o-transition: background 0.15s;
 }
 
-.comp:not(.projects):hover {
-    background-color: var(--bg-main-light);
+.bg-card {
+  opacity: 0.3;
+  display: grid;
+}
+
+.bg-card div {
+  @apply m-2 rounded-md;
+  background-color: #212121;
+}
+
+div.cards-container-1 .first,
+div.cards-container-1 .third {
+  animation: first 10s infinite linear;
+}
+div.cards-container-1 .second,
+div.cards-container-1 .forth {
+  animation: second 10s infinite linear;
+}
+div.cards-container-2 .first,
+div.cards-container-2 .third {
+  animation: first_sec 10s infinite linear;
+}
+div.cards-container-2 .second,
+div.cards-container-2 .forth {
+  animation: second_sec 10s infinite linear;
+}
+
+@keyframes first {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 1000px);
+  }
+}
+@keyframes second {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, -1000px);
+  }
+}
+
+@keyframes first_sec {
+  from {
+    transform: translate(0px, -1000px);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes second_sec {
+  from {
+    transform: translate(0px, 1000px);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* Light mode --------------------------------------------- */
+
+.hero a {
+  transition: background 0.15s;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  -ms-transition: background 0.15s;
+  -o-transition: background 0.15s;
 }
 
 body.light {
-    color: black;
-    background-color: white;
-}
-
-.hero a {
-    transition: background 0.15s;
-    -webkit-transition: background 0.15s;
-    -moz-transition: background 0.15s;
-    -ms-transition: background 0.15s;
-    -o-transition: background 0.15s;
+  color: black;
+  background-color: white;
 }
 
 body.light .hero img {
-    background-color: black;
+  background-color: black;
 }
 
 body.light .side-bar .comp:not(.projects):hover {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .project h2 i {
-    opacity: .7;
-    transition: all .2s;
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -ms-transition: all .2s;
-    -o-transition: all .2s;
+  opacity: 0.7;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
 
 .project:hover h2 i {
-    left: 6px;
-    opacity: 1;
+  left: 6px;
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
-    .app {
-        grid-template-areas: 'head head head head head' 'hero hero hero hero hero' 'bar bar bar bar bar' 'foot foot foot foot foot';
-    }
+  .app {
+    grid-template-areas: "head head head head head" "hero hero hero hero hero" "bar bar bar bar bar" "foot foot foot foot foot";
+  }
 
-    .side-bar {
-        overflow-y: visible !important;
-        height: auto;
-    }
+  .side-bar {
+    overflow-y: visible !important;
+    height: auto;
+  }
 }
 
 @media (max-width: 820px) {
-    .side-bar {
-        padding: 1rem;
-        margin: 1rem;
-    }
+  .side-bar {
+    padding: 1rem;
+    margin: 1rem;
+  }
 
-    .hero {
-        padding: 1rem;
-        margin: 1rem;
-    }
+  .hero {
+    padding: 1rem;
+    margin: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .app {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 1rem 1rem 0;
-    }
+  .app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 1rem 0;
+  }
 }
 
 @media (max-width: 600px) {
-    .side-bar {
-        padding: 0;
-    }
+  .side-bar {
+    padding: 0;
+  }
 
-    .side-bar .skills div {
-        display: block;
-    }
+  .side-bar .skills div {
+    display: block;
+  }
 
-    .side-bar .skills div ul {
-        margin-top: 2rem;
-        border: none;
-    }
+  .side-bar .skills div ul {
+    margin-top: 2rem;
+    border: none;
+  }
 
-    .side-bar .comp {
-        padding: 2rem 0;
-        margin-top: 2rem;
-    }
+  .side-bar .comp {
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
 
-    .side-bar .comp div {
-        padding: .5rem;
-        margin: 1rem 0;
-    }
+  .side-bar .comp div {
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
 
-    .experience div h2 {
-        padding: 2rem .5rem;
-    }
+  .experience div h2 {
+    padding: 2rem 0.5rem;
+  }
 }
 
 footer {
-    grid-area: foot;
+  grid-area: foot;
 }

@@ -1,46 +1,58 @@
-import { useEffect, useState } from 'react'
-import Homepage from './Components/Homepage'
-import './style/output.css'
-import Footer from './Components/Footer'
+import { useEffect, useState } from "react";
+import Homepage from "./Components/Homepage";
+import "./style/output.css";
+import Footer from "./Components/Footer";
+import BackgroundCards from "./Components/Background";
 
 function Header({ light, setLight }) {
   return (
-    <header className='h-fit flex justify-end'>
-      <button className='w-12 h-12 text-2xl hover:bg-main-light rounded-full' onClick={() => {
-        setLight(!light)
-      }}>
-        {light ? <i className='fa-solid fa-sun'></i> : <i className='fa-solid fa-moon'></i>}
+    <header className="h-fit flex justify-end">
+      <button
+        className="w-12 h-12 text-2xl hover:bg-main-light rounded-full"
+        onClick={() => {
+          setLight(!light);
+        }}
+      >
+        {light ? (
+          <i className="fa-solid fa-sun"></i>
+        ) : (
+          <i className="fa-solid fa-moon"></i>
+        )}
       </button>
     </header>
-  )
+  );
 }
 
 function App() {
-  const [light, setLight] = useState(false)
+  const [light, setLight] = useState(false);
 
   useEffect(() => {
     if (light) {
-      document.body.classList.add('light')
+      document.body.classList.add("light");
     } else if (!light) {
-      document.body.classList.remove('light')
+      document.body.classList.remove("light");
     }
-  }, [light])
+  }, [light]);
 
   useEffect(() => {
-    const app = document.querySelector('.app')
+    const app = document.querySelector(".app");
 
     setTimeout(() => {
-      app.classList.add('fade')
-    }, 200)
+      app.classList.add("fade");
+    }, 200);
   }, []);
 
   return (
     <div className="app opacity-0">
-      <Header light={light} setLight={setLight}/>
-      <Homepage /> 
-      <Footer />
+      <BackgroundCards id={1}/>
+      <BackgroundCards id={2}/>
+      <div className="container-all mx-16 mt-16">
+        <Header light={light} setLight={setLight} />
+        <Homepage />
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
