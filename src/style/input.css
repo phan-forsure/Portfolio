@@ -69,7 +69,6 @@ body {
   grid-template-areas: "head head head head head" "hero hero hero hero hero" "bar bar bar bar bar" "foot foot foot foot foot";
 }
 
-
 header {
   grid-area: head;
   width: 100%;
@@ -119,7 +118,7 @@ div.cards-container-1 .third {
   animation: first 10s infinite linear;
 }
 div.cards-container-1 .second,
-div.cards-container-1 .forth {
+div.cards-container-1 .fourth {
   animation: second 10s infinite linear;
 }
 div.cards-container-2 .first,
@@ -127,7 +126,7 @@ div.cards-container-2 .third {
   animation: first_sec 10s infinite linear;
 }
 div.cards-container-2 .second,
-div.cards-container-2 .forth {
+div.cards-container-2 .fourth {
   animation: second_sec 10s infinite linear;
 }
 
