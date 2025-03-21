@@ -1,3 +1,5 @@
+import { Mail } from "lucide-react";
+
 export default function Hero() {
   return (
     <section className="hero m-12 flex flex-wrap items-center justify-center">
@@ -15,7 +17,7 @@ export default function Hero() {
           I'm <span className="font-normal">Abdulrahman</span>, a passionate
           front-end web developer who builds unique experiences & interfaces.
         </p>
-        <p className="text-xl w-full text-center">
+        {/* <p className="text-xl w-full text-center">
           Get in touch{" "}
           <a
             className="border-b-2 border-b-main hover:text-white"
@@ -23,13 +25,21 @@ export default function Hero() {
           >
             phantommy38@gmail.com
           </a>
-        </p>
-        <p className="text-xl w-full text-center">
+        </p> */}
+        {/* <p className="text-xl w-full text-center">
           Text me on Whatsapp{" "}
           <a className="border-b-2 border-b-main hover:text-white">
             +20 01278786671
           </a>
-        </p>
+        </p> */}
+        <div className="flex justfiy-center items-center text-3xl">
+          Let's work together
+          <button className="flex justify-center rounded-md items-center bg-white ml-6">
+            <a href="mailto:phantommy38@gmail.com" className="px-2 m-3">
+              <Mail className="text-black" />
+            </a>
+          </button>
+        </div>
       </div>
     </section>
   );

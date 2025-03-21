@@ -6,7 +6,7 @@ import BackgroundCards from "./Components/Background";
 
 function Header({ light, setLight }) {
   return (
-    <header className="h-fit flex justify-end">
+    <header className="h-fit flex justify-between items-center">
       <button
         className="w-12 h-12 text-2xl hover:bg-main-light rounded-full"
         onClick={() => {
@@ -19,7 +19,7 @@ function Header({ light, setLight }) {
           <i className="fa-solid fa-moon"></i>
         )}
       </button>
-      <div className="m-2 flex">
+      <div className="m-2 flex gap-2">
         <a href="https://github.com/phan-forsure" className="block w-fit mx-2">
           <img
             className="w-8 h-8 rounded-xl opacity-50 hover:opacity-85 transition-all cursor-pointer"
