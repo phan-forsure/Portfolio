@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 export default function Hero() {
   return (
     <section className="hero m-12 flex flex-wrap items-center justify-center">
-      <div className="text-6xl font-extralight px-48 py-8 flex flex-wrap select-none justify-center items-center">
+      <div className="hero_text text-6xl font-extralight px-48 py-8 flex flex-wrap select-none justify-center items-center">
         <h1 className="mb-8 font-normal text-center">
           Hello!{" "}
           <span

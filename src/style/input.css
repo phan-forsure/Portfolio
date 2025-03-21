@@ -86,7 +86,7 @@ header {
 
 .side-bar {
   grid-area: bar;
-  height: 40rem;
+  /* height: 40rem; */
   width: calc(100% - 1rem);
 }
 
@@ -209,6 +209,11 @@ body.light .side-bar .comp:not(.projects):hover {
   .side-bar {
     overflow-y: visible !important;
     height: auto;
+    padding: 0;
+  }
+
+  .hero > div {
+    padding: 0;
   }
 }
 
@@ -219,13 +224,23 @@ body.light .side-bar .comp:not(.projects):hover {
   }
 
   .hero {
-    padding: 1rem;
     margin: 1rem;
+    padding: 0;
+  }
+
+  .hero_text {
+    @apply text-3xl;
+  }
+  .hero_text > p {
+    @apply text-xl;
+  }
+  .hero_text > div {
+    @apply text-xl;
   }
 }
 
 @media (max-width: 768px) {
-  .app {
+  .container-all {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
