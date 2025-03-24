@@ -15,7 +15,7 @@ export default function Hero() {
         </h1>
         <p className="mb-4 text-3xl text-center">
           I'm <span className="font-normal">Abdulrahman</span>, a passionate
-          front-end web developer who builds unique experiences & interfaces.
+          web developer who builds unique experiences & interfaces.
         </p>
         {/* <p className="text-xl w-full text-center">
           Get in touch{" "}
